@@ -1,0 +1,30 @@
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+.iconfont {
+  font-family: 'iconfont';
+}
+.van-dropdown-menu__title--active{
+  color: rgb(74,88,255);
+}
+.navLeftfont{
+  font-size: 12px !important;
+}
+.iconfont{
+  font-size: 12px;
+}
+.condition .iconfont{
+  color: rgb(153, 153, 153);
+  font-size: 12px;
+}
+.nr .iconfont{
+  color: rgb(153, 153, 153);
+}
+.iconfont-extra::before {
+  content: '\e626';
+}

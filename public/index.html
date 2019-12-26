@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>applic</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but applic doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <script>
+    // 更换状态栏颜色
+    // function plusReady() {
+    //   var type = plus.os.name;
+    //   if (type == "iOS") {
+    //     plus.navigator.setStatusBarBackground("#368CBD");
+    //   } else {
+    //     plus.navigator.setStatusBarBackground("#fff");
+    //   }
+
+    // }
+    // if (window.plus) {
+    //   plusReady();
+    // } else {
+    //   document.addEventListener("plusready", plusReady, false);
+    // }
+
+    // window.onload = function () {
+    //   document.addEventListener('touchstart', function (event) {
+    //     if (event.touches.length > 1) {
+    //       event.preventDefault()
+    //     }
+    //   })
+    //   document.addEventListener('gesturestart', function (event) {
+    //     event.preventDefault()
+    //   })
+    // }
+  </script>
+  <script type="text/javascript">
+    if (window.plus) {
+      plusReady()
+    } else {
+      document.addEventListener('plusready', plusReady, false)
+    }
+
+    function plusReady() {
+      plus.navigator.setStatusBarBackground('#FFFFFF');
+      plus.navigator.setStatusBarStyle('dark');
+    }
+  </script>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    mui.init({
+      swipeBack: false, //关闭右滑关闭功能（默认就是false）
+      keyEventBind: {
+        backbutton: true //开启back按键监听（默认就是true）
+      }
+    });
+    var quitTime = null;
+    mui.plusReady(function () {
+      mui.back = function () {
+        //首次按键，提示‘再按一次退出应用’
+        if (!quitTime) {
+          //记录第一次按下回退键的时间
+          quitTime = new Date().getTime();
+          //回退到上一页面
+          window.history.go(-1);
+          setTimeout(function () {
+            //1s中后清除
+            quitTime = null;
+          }, 1000);
+        } else {
+          if ((new Date().getTime() - quitTime) < 1000) {
+            quitTime = null;
+            plus.runtime.quit();
+          }
+        }
+      };
+    });
+  </script>
+  <script>
+
+  </script>
+  <script type='text/javascript'>
+    (function (m, ei, q, i, a, j, s) {
+      console.log(m, ei)
+      m[i] = m[i] || function () {
+        (m[i].a = m[i].a || []).push(arguments)
+      };
+      j = ei.createElement(q),
+        s = ei.getElementsByTagName(q)[0];
+      j.async = true;
+      j.charset = 'UTF-8';
+      j.src = 'https://static.meiqia.com/dist/meiqia.js?_=t';
+      s.parentNode.insertBefore(j, s);
+    })(window, document, 'script', '_MEIQIA');
+    _MEIQIA('entId', '175421');
+  </script>
+  <script>
+    _MEIQIA('withoutBtn');
+    _MEIQIA('getUnreadMsg', newMsg);
+    _MEIQIA('hidePanel');
+  </script>
+  <script src="http://at.alicdn.com/t/font_1519006_fzbi4gbtlmo.js"></script>
+
+</body>
+<style>
+  .bubble-before-after {
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    right: 220px;
+    bottom: 40px;
+    width: 260px;
+    border: 1px solid #f7f7f7;
+    border-radius: 4px;
+    color: #000;
+    text-align: left;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.16);
+    line-height: 1.428571429;
+    background-color: #fff;
+    height: 96px;
+    margin-top: -48px;
+    z-index: 2;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .bubble-before-after {
+      left: 10px;
+      bottom: 80px;
+    }
+
+    .bubble-before-after .arrow1,
+    .bubble-before-after .arrow2 {
+      display: none;
+    }
+  }
+
+  .bubble-before-after #unreadNum {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: -5px;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 15px;
+    background-color: #ff3b30;
+  }
+
+  .bubble-before-after .arrow1 {
+    position: absolute;
+    z-index: 2;
+    font-size: 0;
+    line-height: 0;
+    right: -8px;
+    top: 42px;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 8px solid #fff;
+  }
+
+  .bubble-before-after .arrow2 {
+    position: absolute;
+    z-index: 1;
+    font-size: 0;
+    line-height: 0;
+    right: -10px;
+    top: 41px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 9px solid #f7f7f7;
+  }
+
+  .bubble-before-after .inside {
+    margin: 12px 18px;
+    color: #2a3541;
+    text-align: left;
+  }
+
+  .bubble-before-after .inside .avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    margin-right: 6px;
+    vertical-align: top;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .bubble-before-after .inside .name {
+    display: inline-block;
+    margin-top: 3px;
+    font-size: 16px;
+    color: #2a3541;
+  }
+
+  .bubble-before-after .inside .msg {
+    max-height: 40px;
+    margin-top: 5px;
+    font-size: 14px;
+    overflow: hidden;
+    color: #2a3541;
+  }
+</style>
+
+</html>
